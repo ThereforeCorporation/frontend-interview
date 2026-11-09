@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { MatButtonModule } from '@angular/material/button';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
+    imports: [MatButtonModule],
     declarations: [AppComponent]
   }));
 
@@ -20,10 +20,12 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('frontend-interview');
   });
 
-  it('should render title', () => {
+  it('should render the book list and its actions', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('frontend-interview app is running!');
+    expect(compiled.querySelector('.book-item .title')?.textContent).toContain('[TITLE]');
+    const buttons = Array.from(compiled.querySelectorAll('button'));
+    expect(buttons.map(button => button.textContent?.trim())).toEqual(['Add To Bookshelf', 'Update']);
   });
 });
