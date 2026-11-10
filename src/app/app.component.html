@@ -11,9 +11,31 @@
   }
 
   .book-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "title action"
+      "description action";
+    column-gap: 16px;
     width: 100%;
     text-align: left;
     border-bottom: 1px solid gray;
+  }
+
+  .book-item .title {
+    grid-area: title;
+    overflow-wrap: anywhere;
+  }
+
+  .book-item .description {
+    grid-area: description;
+    overflow-wrap: anywhere;
+  }
+
+  .book-item .action {
+    grid-area: action;
+    display: flex;
+    align-items: center;
   }
 
   .books-container {
