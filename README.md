@@ -4,9 +4,8 @@ Angular 22 application using Angular Material and the Angular CLI application bu
 
 ## Requirements and installation
 
-Use Node.js `^22.22.3`, `^24.15.0`, or `>=26.0.0`, and npm `>=12.2.1 <13`
-(the project's selected version is npm 12.2.1). To upgrade an older npm, run
-`npm install --global npm@12.2.1` from outside this project directory first.
+Use Node.js `^22.22.3`, `^24.15.0`, or `>=26.0.0`, and npm `10.8.2`. To install the selected npm version, run
+`npm install --global npm@10.8.2` from outside this project directory first.
 
 ```sh
 npm ci
@@ -17,11 +16,11 @@ Open `http://localhost:4200/`. The development server reloads when source files 
 
 ## Dependency release age
 
-The project `.npmrc` sets `min-release-age=14`, so npm selects dependency versions
-published at least 14 days ago, including transitive dependencies. Keep this setting
-when updating dependencies and commit the updated `package-lock.json`.
-The Node.js and npm requirements are enforced by `engines`, `devEngines`, and
-`engine-strict` so older npm clients cannot silently ignore the release-age policy.
+When updating dependencies, select versions published at least 14 days ago,
+including transitive dependencies, and commit the updated `package-lock.json`.
+npm 10.8.2 does not support `min-release-age`, so this policy must be checked
+manually. The Node.js and npm requirements are enforced by `engines` and
+`engine-strict`.
 
 Angular framework 22.2.3 and CLI/Material 22.2.4 were the newest eligible stable
 versions when this upgrade was performed. Newer releases become eligible after

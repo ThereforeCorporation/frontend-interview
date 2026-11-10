@@ -38,10 +38,10 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~6.0.3"
   },
-  "packageManager": "npm@12.2.1",
+  "packageManager": "npm@10.8.2",
   "engines": {
     "node": "^22.22.3 || ^24.15.0 || >=26.0.0",
-    "npm": ">=12.2.1 <13"
+    "npm": "10.8.2"
   },
   "devEngines": {
     "runtime": {
@@ -51,7 +51,7 @@
     },
     "packageManager": {
       "name": "npm",
-      "version": ">=12.2.1 <13",
+      "version": "10.8.2",
       "onFail": "error"
     }
   },
